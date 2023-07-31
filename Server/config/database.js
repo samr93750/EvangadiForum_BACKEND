@@ -1,7 +1,15 @@
 const mysql = require("mysql2");
 require('dotenv').config()
 
+// const pool = mysql.createPool({
+//   host: process.env.DB_HOST,
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASS,
+//   database: process.env.MYSQL_DB
+// });
+
 const pool = mysql.createConnection(process.env.DATABASE_URL);
+// const pool =mysql.createPool(process.env.DATABASE_URL);
 
 pool.connect(function (err, connection) {
   if (err) throw err;
