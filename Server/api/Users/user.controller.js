@@ -18,7 +18,7 @@ module.exports = {
     const { userName, firstName, lastName, email, password } = req.body;
 
     console.log(req.body);
-
+res.send("hello world");
     //validation
     if (!userName || !firstName || !lastName || !email || !password) {
       // alert("not all fields have been provided");
