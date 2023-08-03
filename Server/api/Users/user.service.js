@@ -1,5 +1,4 @@
 const pool = require("../../config/database");
-
 module.exports = {
   //data comes form the user controller
   register: (data, callback) => {
