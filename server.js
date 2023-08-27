@@ -20,7 +20,8 @@ app.use((req, res, next) => {
   res.header("Access-Control-Expose-Headers", "Authorization"); // Expose any additional headers if needed
   next();
 });
-app.use(cors)
+
+// app.use(cors)
 // app.use(
 //   cors({
 //     origin: function (origin, callback) {
