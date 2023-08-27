@@ -7,15 +7,23 @@ require('dotenv').config()
 //   password: process.env.DB_PASS,
 //   database: process.env.MYSQL_DB
 // });
-const pool = mysql.createConnection(process.env.DATABASE_URL);
+
+// const pool = mysql.createConnection(process.env.DATABASE_URL);
+const pool = mysql.createPool(process.env.DATABASE_URL);
+
 // console.log("Connected to PlanetScale!");
 // pool.end();
 // const pool = mysql.createConnection(process.env.DATABASE_URL);
 // const pool =mysql.createPool(process.env.DATABASE_URL);
 
-pool.connect(function (err, connection) {
-  if (err) throw err;
+pool.getConnection((err, connection) => {
+  if (err) {
+    console.error("Error getting database connection:", err);
+    return;
+  }
   console.log("Database connected!!!");
+
+  // connection.release();
 });
 
 let registration = `CREATE TABLE if not exists registration(
