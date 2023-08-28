@@ -40,21 +40,6 @@ pool.query(registration, (err, results, fields) => {
   console.log("registration table created!!!");
 });
 
-// let test = `CREATEd TABLE if not exists test(
-//     user int auto_increment,
-//     name varchar(255) not null,
-//     uemail VARCHAR(255) not null,
-//     pa varchar(255) not null,
-//     PRIMARY KEY(user)
-// )`;
-let drop = `DROP TABLE test`
-
-pool.query(drop, (err, results, fields) => {
-  if (err) throw err;
-  console.log("test table droped!!!");
-});
-
-//DROP TABLE test;
 
 
 
@@ -71,6 +56,7 @@ pool.query(profile, (err, results, fields) => {
   if (err) throw err;
   console.log("profile table created!!!");
 });
+
 
 let question = `CREATE TABLE if not exists question(
    question_id int auto_increment,
