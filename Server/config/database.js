@@ -34,11 +34,29 @@ let registration = `CREATE TABLE if not exists registration(
     PRIMARY KEY(user_id)
 )`;
 
-
+ 
 pool.query(registration, (err, results, fields) => {
   if (err) throw err;
   console.log("registration table created!!!");
 });
+
+// let test = `CREATEd TABLE if not exists test(
+//     user int auto_increment,
+//     name varchar(255) not null,
+//     uemail VARCHAR(255) not null,
+//     pa varchar(255) not null,
+//     PRIMARY KEY(user)
+// )`;
+let drop = `DROP TABLE test`
+
+pool.query(drop, (err, results, fields) => {
+  if (err) throw err;
+  console.log("test table droped!!!");
+});
+
+//DROP TABLE test;
+
+
 
 let profile = `CREATE TABLE if not exists profile(
     user_profile_id int auto_increment,

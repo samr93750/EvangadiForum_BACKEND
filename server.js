@@ -10,6 +10,7 @@ const port = process.env.PORT||80;
 
 app.use(express.json());
 app.use(cors());
+
 // const allowedOrigins = ["https://forumfrontend-samrawit.onrender.com"];
 
 // app.use((req, res, next) => {
